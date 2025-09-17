@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Minha Casa</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <ul>
+        <button onclick="window.location.href='/registrar_usuario'">Cadastrar Usuários</button>
+        <button onclick="window.location.href='/listar_usuarios'">Listar Usuários</button>
+        <button onclick="window.location.href='/registrar_sensor'">Cadastrar Sensores</button>
+        <button onclick="window.location.href='/listar_sensores'">Listar Sensores</button>
+=        </ul>
+        <br>
+        <br>
+        <button onclick="window.location.href='/'">Voltar</button>
+    {% endblock %}
+</body>
+</html>
+
