@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <form action="http://localhost:8080/validar_usuario" method="post">
+        <h2>Login</h2>
+        <input placeholder="Insira seu email:" name="usuario" required>
+        <input placeholder="Insira sua senha:" type="password" name="password" required>
+        <button type="submit" value="submit">Logar</button>
+    </form>
+</div>
+{% endblock %}
+
+

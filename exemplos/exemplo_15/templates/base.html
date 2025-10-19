@@ -1,0 +1,34 @@
+<html>
+	{% block title %}<title>Minha Casa</title>{% endblock %}
+    <link rel="stylesheet" href="/static/css/style.css">
+	</head>
+	<nav>
+		<a class="botao" href="#">
+			<img src="/static/img/170781.jpg" width="30" height="30" alt="">
+		</a>
+		<div id="navbarNavAltMarkup">
+			<ul>
+				<li>
+					<a class="botao" href="/home">Home</a>
+				</li>
+				<li>
+					<a class="botao" href="/home" id="navbarDropdownMenuLink" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						Devices
+					</a>
+					<div aria-labelledby="navbarDropdownMenuLink">
+						<a class="botao" href="/register_user">Cadastrar Usuários</a>
+						<a class="botao" href="/register_sensor">Cadastrar Sensores</a>
+						<a class="botao" href="/register_actuator">Cadastrar Atuadores</a>
+						<a class="botao" href="users">Listar Usuários</a>
+						<a class="botao" href="/sensors">Listar Sensores</a>
+						<a class="botao" href="/actuators">Listar Atuadores</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div id="content">
+		{% block content %} {% endblock %}
+	</div>
+	</html>

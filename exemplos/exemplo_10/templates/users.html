@@ -1,0 +1,30 @@
+<!-- users.html -->
+<html>
+<head>
+    <title>Usuários</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Usuários</h1>
+    <br>
+    {% if devices %}
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Senha</th>
+            </tr>
+            {% for key, value in devices.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Ainda não há usuários registrados!</p>
+    {% endif %}
+    <br>
+    <br>
+    <a class="botao" href="/home">Home</a>
+</body>
+</html>

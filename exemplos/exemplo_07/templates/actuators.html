@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Minha Casa</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+<body>
+    <h1>Atuadores</h1>
+    <br>
+    <ul>
+        {% for key, value in atuadores.items() %}
+        <li>{{ key }} : {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <a class="botao" href="/">Voltar</a>
+</body>
+</html>
+ 

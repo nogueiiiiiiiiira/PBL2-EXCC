@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Cadastrar Usuário</h2>
+<form action="http://localhost:8080/adicionar_usuario" method="post">
+    <input placeholder="Insira seu email:" name="usuario" type="email" required>
+    <input placeholder="Insira sua senha:" type="password" name="password" required>
+    <button type="submit" value="Cadastrar">Cadastrar</button>
+</form>
+<button onclick="window.location.href='/home'">Voltar</button>
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Remover Sensor</h2>
+<form action="/sensores/deletar_sensor" method="post">
+    <select name="sensor" id="sensor">
+        {% for key, value in sensores_lista.items() %}
+        <option value="{{ key }}">{{ key }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit" value="Deletar">Deletar</button>
+</form>
+<button onclick="window.location.href='/home'">Voltar</button>
+{% endblock %}
+
+

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Minha Casa</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+<body>
+    <h1>Sensores</h1>
+    <br>
+    <ul>
+        {% for key, value in sensores.items() %}
+        <li>{{ key }} : {{ value }}</li>
+            {% if value < 20 %}
+            <li>Temperatura baixa</li>
+            {% elif value >= 20 and value < 25 %}
+            <li>Temperatura Ambiente</li>
+            {% else %}
+            <li>Temperatura alta</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <a class="botao" href="/">Voltar</a>
+</body>
+</html>

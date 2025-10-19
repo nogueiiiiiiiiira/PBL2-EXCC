@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Listar Sensores</h2>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Sensor</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in sensores_lista.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<button onclick="window.location.href='/home'">Voltar</button>
+{% endblock %}

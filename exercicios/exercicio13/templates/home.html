@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/style.css">
+    <title>Minha Casa</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    <ul>
+        <button onclick="window.location.href='/sensores'">Sensores</button>
+        <button onclick="window.location.href='/atuadores'">Atuadores</button>
+    </ul>
+    <br>
+    <br>
+    <button onclick="window.location.href='/'">Voltar</button>
+    {% endblock %}
+</body>
+</html>
+
+

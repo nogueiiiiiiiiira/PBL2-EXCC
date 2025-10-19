@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Cadastrar Atuador</h2>
+<form action="http://localhost:8080/atuadores/adicionar_atuador" method="post">
+    <input placeholder="Insira o nome do atuador:" name="atuador" required>
+    <button type="submit" value="Cadastrar">Cadastrar</button>
+</form>
+<button onclick="window.location.href='/home'">Voltar</button>
+{% endblock %}
+
+

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Listar Usuários</h2>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in usuarios.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<button onclick="window.location.href='/home'">Voltar</button>
+{% endblock %}

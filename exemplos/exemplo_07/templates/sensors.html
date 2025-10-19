@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Minha Casa</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+<body>
+    <h1>Sensores</h1>
+    <br>
+    <ul>
+        {% for key, value in sensores.items() %}
+        <li>{{ key }} : {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <a class="botao" href="/">Voltar</a>
+</body>
+</html>

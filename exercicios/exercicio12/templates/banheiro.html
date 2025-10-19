@@ -1,0 +1,12 @@
+{% extends "room.html" %}
+{% block content %}
+<h1>MINHA CASA</h1>
+<h2>Acesse no Banheiro:</h2>
+<ul>
+    <button onclick="window.location.href='/sensores/banheiro'">Sensores</button>
+    <button onclick="window.location.href='/atuadores/banheiro'">Atuadores</button>
+</ul>
+<br><br>
+<button onclick="window.location.href='/'">Voltar</button>
+{% endblock %}
+
