@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/style.css">
     <title>Minha Casa</title>
-    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <nav>
-        <a class="botao" href="/">Minha Casa</a>
-    </nav>
-    <div>
-        <h1>Bem-vindo à Minha Casa</h1>
-        <p>Selecione uma das opções:</p>
-        <a class="botao" href="/home">Home</a>
-        <a class="botao" href="/sensors">Sensores</a>
-        <a class="botao" href="/actuators">Atuadores</a>
-    </div>
+    {% extends "base.html" %}
+    {% block content %}
+    <ul>
+        <li><a class="botao" href="/sensores">Sensores</a></li>
+        <li><a class="botao" href="/atuadores">Atuadores</a></li>
+        <li><a class="botao" href="/400">Forçar Bad Request</a></li>
+        <li><a class="botao" href="/401">Forçar Unauthorized</a></li>
+        <li><a class="botao" href="/403">Forçar Forbidden</a></li>
+        <li><a class="botao" href="/403">Forçar Page Not Found</a></li>
+        <li><a class="botao" href="/405">Forçar Method Now Allowed</a></li>
+        <li><a class="botao" href="/408">Forçar Request Timeout</a></li>
+        <li><a class="botao" href="/429">Forçar Too Many Requests</a></li>
+        <li><a class="botao" href="/500">Forçar Internal Server Error</a></li>
+        <li><a class="botao" href="/503">Forçar Service Unavailable</a></li>
+    </ul>
+    {% endblock %}
 </body>
 </html>
+
+
