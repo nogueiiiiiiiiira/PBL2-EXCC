@@ -14,8 +14,8 @@ def index():
     <h2>Acesse o menu:</h2>
     <br>
     <ul>
-        <button onclick="window.location.href='/quarto'">Quarto</button>
-        <button onclick="window.location.href='/banheiro'">Banheiro</button>
+        <a class="botao" href="/quarto">Quarto</a>
+        <li><a class="botao" href="/banheiro">Banheiro</a></li>
     </ul>
 </body>
 </html>
@@ -38,7 +38,7 @@ def banheiro():
     </ul>
     <br>
     <br>
-    <button onclick="window.location.href='/'">Voltar</button>
+    <a class="botao" href="/">Voltar</a>
 </body>
 </html>
 
@@ -61,7 +61,7 @@ def quarto():
     </ul>
     <br>
     <br>
-    <button onclick="window.location.href='/'">Voltar</button>
+    <a class="botao" href="/">Voltar</a>
 </body>
 </html>
 

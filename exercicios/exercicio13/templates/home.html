@@ -9,12 +9,12 @@
     {% extends "base.html" %}
     {% block content %}
     <ul>
-        <button onclick="window.location.href='/sensores'">Sensores</button>
-        <button onclick="window.location.href='/atuadores'">Atuadores</button>
+        <li><a class="botao" href="/sensores">Sensores</a></li>
+        <li><a class="botao" href="/atuadores">Atuadores</a></li>
     </ul>
     <br>
     <br>
-    <button onclick="window.location.href='/'">Voltar</button>
+    <a class="botao" href="/">Voltar</a>
     {% endblock %}
 </body>
 </html>

@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <ul>
-    <li><button onclick="window.location.href='/registrar_usuario'">Cadastrar Usuários</button></li>
-    <li><button onclick="window.location.href='/listar_usuarios'">Listar Usuários</button></li>
-    <li><button onclick="window.location.href='/remover_usuario'">Remover Usuários</button></li>
-    <li><button onclick="window.location.href='/registrar_sensor'">Cadastrar Sensores</button></li>
-    <li><button onclick="window.location.href='/listar_sensores'">Listar Sensores</button></li>
-    <li><button onclick="window.location.href='/remover_sensor'">Remover Sensores</button></li>
-    <li><button onclick="window.location.href='/registrar_atuador'">Cadastrar Atuadores</button></li>
-    <li><button onclick="window.location.href='/listar_atuadores'">Listar Atuadores</button></li>
-    <li><button onclick="window.location.href='/remover_atuador'">Remover Atuadores</button></li>
+    <li><a class="botao" href="/registrar_usuario">Cadastrar Usuário</a></li>
+    <li><a class="botao" href="/listar_usuarios">Listar Usuários</a></li>
+    <li><a class="botao" href="/remover_usuario">Remover Usuário</a></li>
+    <li><a class="botao" href="/registrar_sensor">Cadastrar Sensor</a></li>
+    <li><a class="botao" href="/listar_sensores">Listar Sensores</a></li>
+    <li><a class="botao" href="/remover_sensor">Remover Sensores</a></li>
+    <li><a class="botao" href="/registrar_atuador">Cadastrar Atuador</a></li>
+    <li><a class="botao" href="/listar_atuadores">Listar Atuadores</a></li>
+    <li><a class="botao" href="/remover_atuador">Remover Atuadores</a></li>
 </ul>
-<button onclick="window.location.href='/'">Voltar</button>
+<br>
+<br>
+<a class="botao" href="/">Voltar</a>
 {% endblock %}
 
 

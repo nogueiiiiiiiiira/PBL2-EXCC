@@ -9,17 +9,17 @@
     {% extends "base.html" %}
     {% block content %}
     <ul>
-        <button onclick="window.location.href='/registrar_usuario'">Cadastrar Usuários</button>
-        <button onclick="window.location.href='/listar_usuarios'">Listar Usuários</button>
-        <button onclick="window.location.href='/remover_usuario'">Remover Usuários</button>
-        <button onclick="window.location.href='/registrar_sensor'">Cadastrar Sensores</button>
-        <button onclick="window.location.href='/listar_sensores'">Listar Sensores</button>
-        <button onclick="window.location.href='/registrar_atuador'">Cadastrar Atuadores</button>
-        <button onclick="window.location.href='/listar_atuadores'">Listar Atuadores</button>
+        <li><a class="botao" href="/registrar_usuario">Cadastrar Usuário</a></li>
+        <li><a class="botao" href="/listar_usuarios">Listar Usuários</a></li>
+        <li><a class="botao" href="/remover_usuario">Remover Usuário</a></li>
+        <li><a class="botao" href="/registrar_sensor">Cadastrar Sensor</a></li>
+        <li><a class="botao" href="/listar_sensores">Listar Sensores</a></li>
+        <li><a class="botao" href="/registrar_atuador">Cadastrar Atuadores</a></li>
+        <li><a class="botao" href="/listar_atuadores">Listar Atuadores</a></li>
         </ul>
         <br>
         <br>
-        <button onclick="window.location.href='/'">Voltar</button>
+        <a class="botao" href="/">Voltar</a>
     {% endblock %}
 </body>
 </html>

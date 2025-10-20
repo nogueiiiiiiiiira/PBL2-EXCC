@@ -14,7 +14,7 @@ def index():
     <h2>Acesse o menu:</h2>
     <br>
     <ul>
-        <button onclick="window.location.href='/atuadores'">Atuadores</button>
+        <li><a class="botao" href="/atuadores">Atuadores</a></li>
     </ul>
 </body>
 </html>
@@ -38,7 +38,7 @@ def atuadores():
     </ul>
     <br>
     <br>
-    <button onclick="window.location.href='/'">Voltar</button>
+    <a class="botao" href="/">Voltar</a>
 </body>
 </html>
 """
