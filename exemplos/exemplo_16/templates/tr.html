@@ -1,0 +1,41 @@
+<html>
+    <head>
+        {% block title %}
+        <meta charset="UTF-8">
+        <title>Modulo IOT</title>
+        <meta http-equiv="refresh" content="5">
+        <link rel="stylesheet" href="static/css/style.css" />
+        {% endblock %}
+    </head>
+    <body>   
+        <a class="botao" href="/home">Home</a>
+
+        <div id="content">
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+<body>
+    <h1>Tempo Real</h1>
+    <div class="container">
+        <div class="cards">
+            {% for key, value in values.items() %}
+                <div class="card">
+                    {% if key == 'temperature' %}
+                        <img src="static/img/imagem3.png" alt="Temperature" class="card-img">
+                        <div class="card-content">
+                            <h3>Temperatura</h3>
+                            <p>{{ value }} ºC</p>
+                        </div>
+                    {% else %}
+                        <img src="static/img/imagem4.png" alt="Humidity" class="card-img">
+                        <div class="card-content">
+                            <h3>Umidade</h3>
+                            <p>{{ value }} %</p>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

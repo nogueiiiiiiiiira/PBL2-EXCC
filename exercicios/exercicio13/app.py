@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 app = Flask(__name__, static_folder = '../../static')
 
 usuarios = {
-    'usuario1@gmail.com' : '1234',
-    'usuario2@gmail.com' : '1234'
+    'usuario@gmail.com@gmail.com' : '1234',
+    'usuario2@gmail.com@gmail.com' : '1234'
 }
 
 @app.route('/')

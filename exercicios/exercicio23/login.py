@@ -5,8 +5,8 @@ login = Blueprint("login", __name__, template_folder = "templates")
 global usuarios
 
 usuarios = {
-    'usuario1@gmail.com' : '1234',
-    'usuario2@gmail.com' : '1234'
+    'usuario@gmail.com@gmail.com' : '1234',
+    'usuario2@gmail.com@gmail.com' : '1234'
 }
 
 @login.route('/validar_usuario', methods=['POST'])

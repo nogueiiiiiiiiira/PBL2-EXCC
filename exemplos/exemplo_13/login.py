@@ -3,18 +3,18 @@ from flask import Blueprint, request, render_template, redirect, url_for
 
 login = Blueprint("login", __name__, template_folder="templates")
 
-users = {
-    "user1": "1234",
-    "user2": "12345"
+usuarios = {
+    "usuario@gmail.com": "1234",
+    "usuario2@gmail.com": "1234"
 }
 
-@login.route('/validated_user', methods=['POST'])
-def validated_user():
+@login.route('/validated_usuario', methods=['POST'])
+def validated_usuario():
     if request.method == 'POST':
-        user = request.form['user']
+        usuario = request.form['usuario']
         password = request.form['password']
-        print(user, password)
-        if user in users and users[user] == password:
+        print(usuario, password)
+        if usuario in usuarios and usuarios[usuario] == password:
             return render_template('home.html')
         else:
             return '<h1>invalid credentials</h1>'
@@ -25,38 +25,38 @@ def validated_user():
 def home():
     return render_template("home.html")
 
-@login.route('users')
-def list_users():
-    global users
-    return render_template("users.html", devices=users)
+@login.route('usuarios')
+def list_usuarios():
+    global usuarios
+    return render_template("usuarios.html", devices=usuarios)
 
-@login.route('/register_user')
-def register_user():
-    return render_template("register_user.html")
+@login.route('/register_usuario')
+def register_usuario():
+    return render_template("register_usuario.html")
 
-@login.route('/add_user', methods=['GET','POST'])
-def add_user():
-    global users
+@login.route('/add_usuario', methods=['GET','POST'])
+def add_usuario():
+    global usuarios
     if request.method == 'POST':
-        user = request.form['user']
+        usuario = request.form['usuario']
         password = request.form['password']
     else:
-        user = request.args.get('user', None)
+        usuario = request.args.get('usuario', None)
         password = request.args.get('password', None)
-    users[user] = password
-    return render_template("users.html", devices=users)
+    usuarios[usuario] = password
+    return render_template("usuarios.html", devices=usuarios)
 
-@login.route('/remove_user')
-def remove_user():
-    return render_template("remove_user.html", devices=users)
+@login.route('/remove_usuario')
+def remove_usuario():
+    return render_template("remove_usuario.html", devices=usuarios)
 
-@login.route('/del_user', methods=['GET','POST'])
-def del_user():
-    global users
+@login.route('/del_usuario', methods=['GET','POST'])
+def del_usuario():
+    global usuarios
     if request.method == 'POST':
         print(request.form)
-        user = request.form['user']
+        usuario = request.form['usuario']
     else:
-        user = request.args.get('user', None)
-    users.pop(user)
-    return render_template("users.html", devices=users)
+        usuario = request.args.get('usuario', None)
+    usuarios.pop(usuario)
+    return render_template("usuarios.html", devices=usuarios)

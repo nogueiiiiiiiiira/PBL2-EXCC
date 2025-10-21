@@ -1,6 +1,0 @@
-Entendi nada do exemplo. Não consegui implementar com o que foi dado, não consegui rodar. 
-Mas dai fiz um com a mesma ideia e com os mesmos exemplos, só que mais no meu estilo e etc e com ajuda da IAzinha
-
-Fiz com conexao no wokwi também. 
-
-https://github.com/nogueiiiiiiiiira/wokwi.git

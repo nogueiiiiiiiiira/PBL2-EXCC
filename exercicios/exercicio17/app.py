@@ -6,8 +6,8 @@ global sensores
 global atuadores
 
 usuarios = {
-    'usuario1@gmail.com' : '1234',
-    'usuario2@gmail.com' : '1234'
+    'usuario@gmail.com@gmail.com' : '1234',
+    'usuario2@gmail.com@gmail.com' : '1234'
 }
 
 sensores = {}
