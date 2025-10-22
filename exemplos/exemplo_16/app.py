@@ -10,8 +10,8 @@ import json
 
 # https://wokwi.com/projects/322577683855704658
 
-temperature= 10
-huminity= 10
+temperature = 10
+humidity = 10
 
 atuadores_values= 1
 
@@ -30,11 +30,10 @@ app.config['MQTT_PASSWORD'] = ''  # Set this item when you need to verify usuari
 app.config['MQTT_KEEPALIVE'] = 5000  # Set KeepAlive time in seconds
 app.config['MQTT_TLS_ENABLED'] = False  # If your broker supports TLS, set it True
 
-mqtt_client= Mqtt()
+mqtt_client = Mqtt()
 mqtt_client.init_app(app)
 
-topic_subscribe1 = "/aula/temperature"
-topic_subscribe2 = "/aula/huminity"
+topic_subscribe = "wokwi-weather"
 
 @app.route('/')
 def index():
@@ -51,8 +50,8 @@ def home():
 
 @app.route('/tempo_real')
 def tempo_real():
-    global temperature, huminity
-    values = {"temperature":temperature, "huminity":huminity}
+    global temperature, humidity
+    values = {"temperature":temperature, "humidity":humidity}
     return render_template("tr.html", values=values)
 
 @app.route('/publish')
@@ -74,25 +73,22 @@ def static_files(filename):
 def handle_connect(client, usuariodata, flags, rc):
     if rc == 0:
         print('Broker Connected successfully')
-        mqtt_client.subscribe(topic_subscribe1) # subscribe topic
-        mqtt_client.subscribe(topic_subscribe2) # subscribe topic
+        mqtt_client.subscribe(topic_subscribe) # subscribe topic
     else:
         print('Bad connection. Code:', rc)
 
 @mqtt_client.on_disconnect()
-def handle_disconnect(client, usuariodata, rc):
+def handle_disconnect():
     print("Disconnected from broker")
 
 
 @mqtt_client.on_message()
 def handle_mqtt_message(client, usuariodata, message):
-    print(message.payload.decode())
-    if(message.topic==topic_subscribe1):
-        global temperature
-        temperature = message.payload.decode()
-    if(message.topic==topic_subscribe2):
-        global huminity
-        huminity = message.payload.decode()
+    data = json.loads(message.payload.decode())
+    print(data)
+    global temperature, humidity
+    temperature = data.get("temp", temperature)
+    humidity = data.get("humidity", humidity)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=True) 
