@@ -11,7 +11,7 @@ def adicionar_sensor():
         sensor = request.form['sensor']
         sensores_lista[sensor] = True
     else:
-        sensor = request.args.get('sensor', None)
+        sensor = request.args.get('sensor')
         if sensor:
             sensores_lista[sensor] = True
 
@@ -24,7 +24,7 @@ def deletar_sensor():
         if sensor in sensores_lista:
             sensores_lista.pop(sensor)
     else:
-        sensor = request.args.get('sensor', None)
+        sensor = request.args.get('sensor')
         if sensor and sensor in sensores_lista:
             sensores_lista.pop(sensor)
 

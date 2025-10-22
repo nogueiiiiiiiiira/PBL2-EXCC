@@ -1,8 +1,8 @@
 <html>
-    <head>
-        <title>Atuadores</title>
-        <link rel="stylesheet" href="static/css/style.css" />
-    </head>
+<head>
+    <title>Atuadores</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
 <body>
     <h1>Atuadores</h1>
     <br>
@@ -12,11 +12,10 @@
                 <th>Nome</th>
                 <th>Deletar</th>
             </tr>
-            {% for key, value in devices.items() %}
+            {% for device in devices %}
             <tr>
-                <td>{{ key }}</td>
-                <td>{{ value }}</td>
-                <td><a class="botao" href="http://localhost:8080/del_atuador?atuador={{key}}">Deletar</a></td>
+                <td>{{ device }}</td>
+                <td><a class="botao" href="http://localhost:8080/del_atuador?atuador={{device}}">Deletar</a></td>
             </tr>
             {% endfor %}
         </table>

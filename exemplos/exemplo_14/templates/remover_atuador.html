@@ -9,11 +9,11 @@
         <br>
         <br>
         <select name="atuador">
-            {% for key, value in devices.items() %}
-            <option>{{ key }}</option>
+            {% for device in devices %}
+            <option>{{ device }}</option>
             {% endfor %}
         </select>
-        <a class="botao" type="submit">Deletar</a>
+        <input class="botao" type="submit" value="Deletar">
     </form>
     <br>
     <br>

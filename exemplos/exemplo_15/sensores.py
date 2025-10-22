@@ -20,7 +20,7 @@ def adicionar_sensor():
         nome = request.form['nome']
         sensores.append(nome)
     else:
-        nome = request.args.get('nome', None)
+        nome = request.args.get('nome')
         if nome:
             sensores.append(nome)
     return render_template("sensores.html", devices=sensores)
@@ -35,7 +35,7 @@ def del_sensor():
     if request.method == 'POST':
         sensor = request.form['sensor']
     else:
-        sensor = request.args.get('sensor', None)
+        sensor = request.args.get('sensor')
     if sensor in sensores:
         sensores.remove(sensor)
     return render_template("sensores.html", devices=sensores)

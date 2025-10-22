@@ -28,8 +28,8 @@ def adicionar_usuario():
         usuario = request.form['usuario']
         password = request.form['password']
     else:
-        usuario = request.args.get('usuario', None)
-        password = request.args.get('password', None)
+        usuario = request.args.get('usuario')
+        password = request.args.get('password')
     usuarios[usuario] = password
     return render_template("usuarios.html", usuarios = usuarios)
 
@@ -40,7 +40,7 @@ def deletar_usuario():
         if usuario in usuarios:
             usuarios.pop(usuario)
     else:
-        usuario = request.args.get('usuario', None)
+        usuario = request.args.get('usuario')
         if usuario and usuario in usuarios:
             usuarios.pop(usuario)
 

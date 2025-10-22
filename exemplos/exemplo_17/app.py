@@ -11,8 +11,8 @@ def main():
 def success():
     if request.method == 'POST':
         f = request.files['file']
-        f.save('static/img/' + f.filename)
-        return "ok"
+        f.save('../../static/img/' + f.filename)
+        return "File upado com sucesso!"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=True)

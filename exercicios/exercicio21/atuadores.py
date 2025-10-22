@@ -11,7 +11,7 @@ def adicionar_atuador():
         atuador = request.form['atuador']
         atuadores_lista[atuador] = True
     else:
-        atuador = request.args.get('atuador', None)
+        atuador = request.args.get('atuador')
         if atuador:
             atuadores_lista[atuador] = True
 
@@ -24,7 +24,7 @@ def deletar_atuador():
         if atuador in atuadores_lista:
             atuadores_lista.pop(atuador)
     else:
-        atuador = request.args.get('atuador', None)
+        atuador = request.args.get('atuador')
         if atuador and atuador in atuadores_lista:
             atuadores_lista.pop(atuador)
 

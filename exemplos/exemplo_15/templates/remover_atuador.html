@@ -1,16 +1,19 @@
 <!-- remover_atuador.html -->
 <html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
 <body>
     <form action="http://localhost:8080/del_atuador" method="post">
         <h1>Remover</h1>
         <br>
         <br>
         <select name="atuador">
-            {% for key, value in devices.items() %}
-            <option>{{ key }}</option>
+            {% for device in devices %}
+            <option>{{ device }}</option>
             {% endfor %}
         </select>
-        <a class="botao" type="submit">Deletar</a>
+        <input class="botao" type="submit" value="Deletar">
     </form>
     <br>
     <br>

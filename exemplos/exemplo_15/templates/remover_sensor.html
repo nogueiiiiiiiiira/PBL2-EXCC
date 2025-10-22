@@ -1,17 +1,22 @@
 <!-- remover_sensor.html -->
 <html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
 <body>
     <form action="http://localhost:8080/del_sensor" method="post">
+        <h1>Remover</h1>
+        <br>
+        <br>
         <select name="sensor">
-            {% for key, value in devices.items() %}
-            <option>{{ key }}</option>
+            {% for device in devices %}
+            <option>{{ device }}</option>
             {% endfor %}
         </select>
-        <a class="botao" type="submit">Deletar</a>
+        <input class="botao" type="submit" value="Deletar">
     </form>
     <br>
     <br>
     <a class="botao" href="/home">Home</a>
 </body>
 </html>
-

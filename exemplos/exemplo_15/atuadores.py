@@ -13,6 +13,7 @@ def list_atuadores():
 def registrar_atuador():
     return render_template("registrar_atuador.html")
 
+
 @atuador_.route('/adicionar_atuador', methods=['GET','POST'])
 def adicionar_atuador():
     global atuadores
@@ -20,7 +21,7 @@ def adicionar_atuador():
         nome = request.form['nome']
         atuadores.append(nome)
     else:
-        nome = request.args.get('nome', None)
+        nome = request.args.get('nome')
         if nome:
             atuadores.append(nome)
     return render_template("atuadores.html", devices=atuadores)
@@ -35,7 +36,7 @@ def del_atuador():
     if request.method == 'POST':
         atuador = request.form['atuador']
     else:
-        atuador = request.args.get('atuador', None)
+        atuador = request.args.get('atuador')
     if atuador in atuadores:
         atuadores.remove(atuador)
     return render_template("atuadores.html", devices=atuadores)

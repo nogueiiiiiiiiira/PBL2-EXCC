@@ -23,7 +23,7 @@ def adicionar_atuador():
     if request.method == 'POST':
         nome = request.form['nome']
     else:
-        nome = request.args.get('nome', None)
+        nome = request.args.get('nome')
     return render_template("atuadores.html", devices=atuadores)
 
 @atuador_.route('/remover_atuador')
@@ -36,6 +36,6 @@ def del_atuador():
     if request.method == 'POST':
         atuador = request.form['atuador']
     else:
-        atuador = request.args.get('atuador', None)
+        atuador = request.args.get('atuador')
     atuadores.pop(atuador)
     return render_template("atuadores.html", devices=atuadores)

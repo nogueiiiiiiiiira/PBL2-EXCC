@@ -40,8 +40,8 @@ def adicionar_usuario():
         usuario = request.form['usuario']
         password = request.form['password']
     else:
-        usuario = request.args.get('usuario', None)
-        password = request.args.get('password', None)
+        usuario = request.args.get('usuario')
+        password = request.args.get('password')
     usuarios[usuario] = password
     return render_template("usuarios.html", devices=usuarios)
 
@@ -60,7 +60,7 @@ def del_usuario():
     if request.method == 'POST':
         usuario = request.form['usuario']
     else:
-        usuario = request.args.get('usuario', None)
+        usuario = request.args.get('usuario')
     usuarios.pop(usuario)
     return render_template("usuarios.html", devices=usuarios)
 

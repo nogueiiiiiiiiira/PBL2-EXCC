@@ -43,8 +43,8 @@ def adicionar_usuario():
         if not usuario or not password:
             return "Usuario and password are required", 400
     else:
-        usuario = request.args.get('usuario', None)
-        password = request.args.get('password', None)
+        usuario = request.args.get('usuario')
+        password = request.args.get('password')
         if not usuario or not password:
             return "Usuario and password are required", 400
     usuarios[usuario] = password
@@ -61,6 +61,6 @@ def del_usuario():
         print(request.form)
         usuario = request.form['usuario']
     else:
-        usuario = request.args.get('usuario', None)
+        usuario = request.args.get('usuario')
     usuarios.pop(usuario)
     return render_template("usuarios.html", devices=usuarios)

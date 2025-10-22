@@ -42,8 +42,8 @@ def adicionar_usuario():
         usuario = request.form['usuario']
         password = request.form['password']
     else:
-        usuario = request.args.get('usuario', None)
-        password = request.args.get('password', None)
+        usuario = request.args.get('usuario')
+        password = request.args.get('password')
     usuarios[usuario] = password
     return render_template("usuarios.html", usuarios = usuarios)
 
@@ -53,7 +53,7 @@ def adicionar_sensor():
         sensor = request.form['sensor']
         sensores[sensor] = True
     else:
-        sensor = request.args.get('sensor', None)
+        sensor = request.args.get('sensor')
         if sensor:
             sensores[sensor] = True
 
