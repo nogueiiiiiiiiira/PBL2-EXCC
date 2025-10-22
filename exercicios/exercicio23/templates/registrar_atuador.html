@@ -9,10 +9,12 @@
     {% extends "base.html" %}
     {% block content %}
     <form action = "http://localhost:8080/atuadores/adicionar_atuador" method = "post">
-        <input placeholder="Insira o nome do atuador:" name = "atuador">
+        <form action = "http://localhost:8080/adicionar_atuador" method = "post">
+        <h1>Cadastrar</h1>
         <br>
         <br>
-        <button type="submit" value="Cadastrar">Cadastrar</button>
+        <p><input type = "text" name = "atuador" placeholder="Interruptor" required/></p>
+        <p><input class="botao" type = "submit" /></p>
     </form>
     <br>
     <br>

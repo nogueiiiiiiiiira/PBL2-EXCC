@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Minha Casa</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+<body>
+    <h1>Atuadores</h1>
+    <br>
+    <ul>
+        {% for key, value in atuadores.items() %}
+        <li>{{ key }} : {{ value }}</li>
+            {% if value == 1 %}
+            <li style="background-color:antiquewhite">Atuador LIGADO</li>
+            {% else %}
+            <li style="background-color:antiquewhite">Atuador DESLIGADO</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <a class="botao" href="/">Voltar</a>
+</body>
+</html>

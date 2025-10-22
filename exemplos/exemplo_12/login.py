@@ -17,7 +17,7 @@ def validated_usuario():
         if usuario in usuarios and usuarios[usuario] == password:
             return render_template('home.html')
         else:
-            return '<h1>invalid credentials</h1>'
+            return '<h1>Invalid Credentials</h1>'
     else:
         return render_template('login.html')
 
@@ -25,17 +25,17 @@ def validated_usuario():
 def home():
     return render_template("home.html")
 
-@login.route('usuarios')
+@login.route('/usuarios')
 def list_usuarios():
     global usuarios
     return render_template("usuarios.html", devices=usuarios)
 
-@login.route('/register_usuario')
-def register_usuario():
-    return render_template("register_usuario.html")
+@login.route('/registrar_usuario')
+def registrar_usuario():
+    return render_template("registrar_usuario.html")
 
-@login.route('/add_usuario', methods=['GET','POST'])
-def add_usuario():
+@login.route('/adicionar_usuario', methods=['GET','POST'])
+def adicionar_usuario():
     global usuarios
     if request.method == 'POST':
         usuario = request.form['usuario']
@@ -46,9 +46,9 @@ def add_usuario():
     usuarios[usuario] = password
     return render_template("usuarios.html", devices=usuarios)
 
-@login.route('/remove_usuario')
-def remove_usuario():
-    return render_template("remove_usuario.html", devices=usuarios)
+@login.route('/remover_usuario')
+def remover_usuario():
+    return render_template("remover_usuario.html", devices=usuarios)
 
 @login.route('/del_usuario', methods=['GET','POST'])
 def del_usuario():

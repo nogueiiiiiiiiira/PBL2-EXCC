@@ -13,15 +13,15 @@ def index():
     <h1>MINHA CASA</h1>
         <h2>Acesse o menu:</h2>
         <ul>
-            <li><a class="botao" href="/sensors">Listar Sensores</a></li>
-            <li><a class="botao" href="/actuators">Listar Atuadores</a></li>
+            <li><a class="botao" href="/sensores">Listar Sensores</a></li>
+            <li><a class="botao" href="/atuadores">Listar Atuadores</a></li>
         </ul>
     </body>
 </html>
 """
 
-@app.route('/sensors')
-def sensors():
+@app.route('/sensores')
+def sensores():
     return """
 <html>
     <head>
@@ -43,8 +43,8 @@ def sensors():
 </html>
 """
 
-@app.route('/actuators')
-def actuators():
+@app.route('/atuadores')
+def atuadores():
     return """
 <html>
     <head>

@@ -9,12 +9,12 @@
     {% extends "base.html" %}
     {% block content %}
     <form action = "http://localhost:8080/adicionar_usuario" method = "post">
-        <input placeholder="Insira seu email:" name = "usuario">
-        <br>
-        <input placeholder="Insira sua senha:" type="password" name = "password">
+<h1>Login</h1>
         <br>
         <br>
-        <button type="submit" value="Cadastrar">Cadastrar</button>
+        <p><input type = "text" name = "usuario" placeholder="usuario@gmail.com" required/></p>
+        <p><input type = "text" name = "password" placeholder="*****" required/></p>
+        <p><input class="botao" type = "submit" /></p>
     </form>
     <br>
     <br>

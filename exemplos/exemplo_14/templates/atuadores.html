@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Atuadores</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Atuadores</h1>
+    <br>
+    {% if devices %}
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Deletar</th>
+            </tr>
+            {% for key, value in devices.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+                <td><a class="botao" href="http://localhost:8080/del_atuador?atuador={{key}}">Deletar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Ainda não há atuadores registrados!</p>
+    {% endif %}
+    <br>
+    <br>
+    <a class="botao" href="/home">Home</a>
+</body>
+</html>

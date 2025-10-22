@@ -2,8 +2,8 @@
 # app.py
 from flask import Flask, render_template, request, redirect, url_for,jsonify, send_from_directory
 from login import login
-from sensors import sensor_
-from actuators import actuator_
+from sensores import sensor_
+from atuadores import atuador_
 from flask_mqtt import Mqtt
 from flask_socketio import SocketIO
 import json
@@ -20,7 +20,7 @@ app = Flask(__name__, static_folder = '../../static')
 
 app.register_blueprint(login, url_prefix='/')
 app.register_blueprint(sensor_, url_prefix='/')
-app.register_blueprint(actuator_, url_prefix='/')
+app.register_blueprint(atuador_, url_prefix='/')
 
 
 app.config['MQTT_BROKER_URL'] = 'mqtt-dashboard.com'

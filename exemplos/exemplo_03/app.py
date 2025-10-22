@@ -7,12 +7,12 @@ app = Flask(__name__)
 def index():
     return "Conteúdo da Página Inicial!"
 
-@app.route('/sensors')
-def sensors():
+@app.route('/sensores')
+def sensores():
     return "Listar Sensores"
 
-@app.route('/actuators')
-def actuators():
+@app.route('/atuadores')
+def atuadores():
     return "Listar Atuadores"
 
 if __name__ == "__main__":

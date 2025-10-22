@@ -1,0 +1,28 @@
+<html>
+    <title>Sensores</title>
+</head>
+<body>
+    <h1>Sensores</h1>
+    <br>
+    {% if devices %}
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Deletar</th>
+            </tr>
+            {% for key, value in devices.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+                <td><a class="botao" href="http://localhost:8080/del_sensor?sensor={{key}}">Deletar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Ainda não há sensores registrados!</p>
+    {% endif %}
+    <br>
+    <br>
+    <a class="botao" href="/home">Home</a>
+</body>
+</html>
