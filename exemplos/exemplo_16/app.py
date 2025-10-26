@@ -8,7 +8,8 @@ from flask_mqtt import Mqtt
 from flask_socketio import SocketIO
 import json
 
-# https://wokwi.com/projects/322577683855704658
+# https://wokwi.com/projects/445896841219301377
+
 
 temperature = 10
 humidity = 10
@@ -16,7 +17,6 @@ humidity = 10
 atuadores_values= 1
 
 app = Flask(__name__, static_folder = '../../static')
-## __name__ is the application name
 
 app.register_blueprint(login, url_prefix='/')
 app.register_blueprint(sensor_, url_prefix='/')
