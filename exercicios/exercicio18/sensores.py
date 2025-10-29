@@ -1,11 +1,20 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, session
+from functools import wraps
 
-sensores = Blueprint("sensores", __name__, template_folder = "templates")
+sensores = Blueprint("sensores", __name__, template_folder="templates")
 
-global sensores_lista
 sensores_lista = {}
 
-@sensores.route('/adicionar_sensor', methods = ['GET', 'POST'])
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'logado' not in session:
+            return redirect('/')
+        return f(*args, **kwargs)
+    return decorated_function
+
+@sensores.route('/adicionar_sensor', methods=['GET', 'POST'])
+@login_required
 def adicionar_sensor():
     if request.method == 'POST':
         sensor = request.form['sensor']
@@ -15,9 +24,10 @@ def adicionar_sensor():
         if sensor:
             sensores_lista[sensor] = True
 
-    return render_template("sensores.html", sensores_lista = sensores_lista)
+    return render_template("sensores.html", sensores_lista=sensores_lista)
 
-@sensores.route('/deletar_sensor', methods = ['GET', 'POST'])
+@sensores.route('/deletar_sensor', methods=['GET', 'POST'])
+@login_required
 def deletar_sensor():
     if request.method == 'POST':
         sensor = request.form['sensor']
@@ -28,7 +38,4 @@ def deletar_sensor():
         if sensor and sensor in sensores_lista:
             sensores_lista.pop(sensor)
 
-    return render_template("sensores.html", sensores_lista = sensores_lista)
-
-if __name__ == "__main__":
-    sensores.run(host = '0.0.0.0', port = 8080, debug = True)
+    return render_template("sensores.html", sensores_lista=sensores_lista)

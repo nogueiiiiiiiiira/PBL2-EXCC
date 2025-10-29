@@ -1,9 +1,9 @@
-
 from flask import Flask, render_template, redirect, url_for, request
 from login import login
 from sensores import sensor_
 
 app = Flask(__name__, static_folder = '../../static')
+app.secret_key = 'karen'
 
 app.register_blueprint(login, url_prefix='/')
 app.register_blueprint(sensor_, url_prefix='/')

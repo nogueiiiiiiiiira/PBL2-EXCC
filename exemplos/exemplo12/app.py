@@ -1,8 +1,8 @@
-
 from flask import Flask, render_template, redirect, url_for, request
 from login import login
 
 app = Flask(__name__, static_folder = '../../static')
+app.secret_key = 'karen'
 
 app.register_blueprint(login, url_prefix='/')
 
